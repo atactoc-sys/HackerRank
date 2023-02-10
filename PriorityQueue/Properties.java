@@ -12,6 +12,7 @@ public class Properties
         queue = new PriorityQueue<>(comparing(Student::getCgpa).reversed()
                 .thenComparing(Student::getName).thenComparing(Student::getId));
     }
+    // sorting in reverse comparing all the student attributes
 
     public List<Student> getStudents(List<String> events)// orderdlist to store sorted student
     {
@@ -23,7 +24,7 @@ public class Properties
             } else {
                 String[] std = event.split(" ");
                 queue.add(new Student(Integer.parseInt(std[3]), std[1], Double.parseDouble(std[2])));
-                // to insert into the array
+                // to insert into 
             }
         }
 
@@ -31,6 +32,7 @@ public class Properties
         if (queue.isEmpty())// to check if queue is empty
         {
             return students;
+           // if condition satisfies return students list
         }
         students.add(queue.poll());
         // add rempved students fom ehe queue into student list
